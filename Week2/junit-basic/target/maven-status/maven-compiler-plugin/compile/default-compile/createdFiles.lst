@@ -1,5 +1,7 @@
-com\cts\junit\Calculator.class
 com\cts\junit\logging\LoggingDemo.class
 com\cts\junit\mockito\UserService.class
 com\cts\junit\mockito\ExternalApi.class
+com\cts\junit\Calculator.class
+com\cts\junit\mockito\NotificationService.class
+com\cts\junit\mockito\AuditService.class
 com\cts\junit\mockito\User.class
