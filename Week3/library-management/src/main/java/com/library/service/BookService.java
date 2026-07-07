@@ -8,15 +8,21 @@ import com.library.repository.BookRepository;
 @Service
 public class BookService {
 
-    @Autowired
     private BookRepository bookRepository;
 
-    public void displayService() {
-
-        System.out.println("BookService: Processing library request...");
-
-        bookRepository.displayRepository();
-
+    // Constructor Injection
+    @Autowired
+    public BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
+    // Setter Injection
+    public void setBookRepository(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
+    public void displayService() {
+        System.out.println("BookService: Processing library request...");
+        bookRepository.displayRepository();
+    }
 }
