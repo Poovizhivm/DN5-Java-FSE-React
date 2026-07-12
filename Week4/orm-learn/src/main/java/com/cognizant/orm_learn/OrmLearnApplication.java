@@ -8,7 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.cognizant.orm_learn.model.Department;
 import com.cognizant.orm_learn.model.Employee;
 import com.cognizant.orm_learn.repository.EmployeeRepository;
+import java.util.List;
 
+import com.cognizant.orm_learn.model.Skill;
+import com.cognizant.orm_learn.repository.SkillRepository;
 import com.cognizant.orm_learn.repository.DepartmentRepository;
 
 
@@ -19,6 +22,8 @@ public class OrmLearnApplication implements CommandLineRunner {
     private EmployeeRepository repository;
     @Autowired
     private DepartmentRepository departmentRepository;
+    @Autowired
+    private SkillRepository skillRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(OrmLearnApplication.class, args);
@@ -27,22 +32,25 @@ public class OrmLearnApplication implements CommandLineRunner {
 public void run(String... args)
         throws Exception {
 
-    Department dept =
-            new Department(1, "IT");
+    Skill s1 =
+            new Skill(1, "Java");
 
-    departmentRepository.save(dept);
+    Skill s2 =
+            new Skill(2, "Spring");
+
+    skillRepository.save(s1);
+    skillRepository.save(s2);
 
     Employee emp =
-            new Employee(
-                    2,
-                    "Poovizhi",
-                    60000);
+            repository.findById(2)
+                    .orElse(null);
 
-    emp.setDepartment(dept);
+    emp.setSkills(
+            List.of(s1, s2));
 
     repository.save(emp);
 
     System.out.println(
-            "Department and Employee saved.");
+            "ManyToMany completed");
 }
 }

@@ -5,6 +5,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.util.List;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.JoinTable;
 
 @Entity
 @Table(name = "employee")
@@ -67,5 +70,21 @@ public Department getDepartment() {
 public void setDepartment(
         Department department) {
     this.department = department;
+}
+@ManyToMany
+@JoinTable(
+        name = "employee_skill",
+        joinColumns =
+            @JoinColumn(name = "employee_id"),
+        inverseJoinColumns =
+            @JoinColumn(name = "skill_id")
+)
+private List<Skill> skills;
+public List<Skill> getSkills() {
+    return skills;
+}
+
+public void setSkills(List<Skill> skills) {
+    this.skills = skills;
 }
 }
