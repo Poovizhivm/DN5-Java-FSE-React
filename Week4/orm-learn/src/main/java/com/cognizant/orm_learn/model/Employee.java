@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import java.util.List;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.JoinTable;
-
+import java.time.LocalDate;
 @Entity
 @Table(name = "employee")
 public class Employee {
@@ -18,6 +18,9 @@ public class Employee {
     private String name;
     private double salary;
 
+    private boolean permanent;
+    private LocalDate dateOfBirth;
+    
     public Employee() {
     }
 
@@ -51,12 +54,14 @@ public class Employee {
         this.salary = salary;
     }
 
-    @Override
+@Override
 public String toString() {
     return "Employee{" +
             "id=" + id +
             ", name='" + name + '\'' +
             ", salary=" + salary +
+            ", permanent=" + permanent +
+            ", dateOfBirth=" + dateOfBirth +
             '}';
 }
 @ManyToOne
@@ -86,5 +91,21 @@ public List<Skill> getSkills() {
 
 public void setSkills(List<Skill> skills) {
     this.skills = skills;
+}
+
+public boolean isPermanent() {
+    return permanent;
+}
+
+public void setPermanent(boolean permanent) {
+    this.permanent = permanent;
+}
+
+public LocalDate getDateOfBirth() {
+    return dateOfBirth;
+}
+
+public void setDateOfBirth(LocalDate dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
 }
 }
