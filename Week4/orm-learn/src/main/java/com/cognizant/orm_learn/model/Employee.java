@@ -2,6 +2,8 @@ package com.cognizant.orm_learn.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -53,5 +55,17 @@ public String toString() {
             ", name='" + name + '\'' +
             ", salary=" + salary +
             '}';
+}
+@ManyToOne
+@JoinColumn(name = "department_id")
+private Department department;
+
+public Department getDepartment() {
+    return department;
+}
+
+public void setDepartment(
+        Department department) {
+    this.department = department;
 }
 }
