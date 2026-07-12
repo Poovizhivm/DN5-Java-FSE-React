@@ -22,16 +22,18 @@ public class OrmLearnApplication implements CommandLineRunner {
 public void run(String... args)
         throws Exception {
 
-    System.out.println("Employees By Name:");
+    System.out.println("JPQL Query:");
 
-    repository.findByName("Poovizhi")
+    repository.getAllEmployees()
             .forEach(System.out::println);
 
     System.out.println("----------------");
 
-    System.out.println("Salary > 30000");
+    System.out.println(
+            "Salary > 30000");
 
-    repository.findBySalaryGreaterThan(30000)
+    repository
+            .getEmployeesBySalary(30000)
             .forEach(System.out::println);
 }
 }
