@@ -19,13 +19,29 @@ public class OrmLearnApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+public void run(String... args) throws Exception {
 
-        Employee emp =
-                new Employee(1, "Poovizhi", 50000);
+    System.out.println("All Employees:");
 
-        repository.save(emp);
+    repository.findAll()
+            .forEach(System.out::println);
 
-        System.out.println("Employee saved successfully.");
-    }
+    System.out.println("----------------");
+
+    Employee emp =
+            repository.findById(1).orElse(null);
+
+    System.out.println("Employee with ID 1:");
+    System.out.println(emp);
+
+    System.out.println("----------------");
+
+    System.out.println(
+            "Employee Exists : "
+                    + repository.existsById(1));
+
+    System.out.println(
+            "Total Employees : "
+                    + repository.count());
+}
 }
