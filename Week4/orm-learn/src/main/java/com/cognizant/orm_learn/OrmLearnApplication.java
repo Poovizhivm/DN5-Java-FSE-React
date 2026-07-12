@@ -17,23 +17,21 @@ public class OrmLearnApplication implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication.run(OrmLearnApplication.class, args);
     }
-
-    @Override
+@Override
 public void run(String... args)
         throws Exception {
 
-    System.out.println("JPQL Query:");
+    System.out.println(
+            "Native Query:");
 
-    repository.getAllEmployees()
+    repository
+            .getAllEmployeesNative()
             .forEach(System.out::println);
 
     System.out.println("----------------");
 
-    System.out.println(
-            "Salary > 30000");
-
     repository
-            .getEmployeesBySalary(30000)
+            .getEmployeesNative(30000)
             .forEach(System.out::println);
 }
 }

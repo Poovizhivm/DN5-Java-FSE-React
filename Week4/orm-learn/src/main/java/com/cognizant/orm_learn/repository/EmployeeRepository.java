@@ -22,4 +22,20 @@ public interface EmployeeRepository
     getEmployeesBySalary(
             @Param("salary")
             double salary);
+    @Query(
+        value =
+        "SELECT * FROM employee",
+        nativeQuery = true
+)
+List<Employee> getAllEmployeesNative();
+
+
+@Query(
+        value =
+        "SELECT * FROM employee " +
+        "WHERE salary > ?1",
+        nativeQuery = true
+)
+List<Employee> getEmployeesNative(
+        double salary);
 }
