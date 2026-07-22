@@ -1,0 +1,26 @@
+<div class="notification-box">
+  <h3>Notifications (Scoped Instance Demo)</h3>
+  <p class="explanation">
+    This component uses a scoped service instance. Any notifications added here are local to this specific component instance and won't leak globally.
+  </p>
+
+  <div class="input-row">
+    <input
+      type="text"
+      [(ngModel)]="newMsg"
+      placeholder="Type alert message..."
+      (keyup.enter)="addNotification()"
+    />
+    <button (click)="addNotification()">Alert</button>
+  </div>
+
+  <div class="logs-list" *ngIf="notifications.length > 0; else noLogs">
+    <div *ngFor="let log of notifications" class="log-item">
+      {{ log }}
+    </div>
+  </div>
+
+  <ng-template #noLogs>
+    <p class="no-logs">No notifications logged yet.</p>
+  </ng-template>
+</div>

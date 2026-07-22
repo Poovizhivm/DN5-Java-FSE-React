@@ -1,0 +1,42 @@
+<div class="profile-container">
+  <!-- Student Info Card -->
+  <div class="profile-card">
+    <div class="profile-avatar">JD</div>
+    <div class="profile-details">
+      <h2>{{ studentInfo.name }}</h2>
+      <p class="email">{{ studentInfo.email }}</p>
+      <div class="metadata-grid">
+        <div class="meta-item">
+          <span class="label">Major:</span>
+          <span class="value">{{ studentInfo.major }}</span>
+        </div>
+        <div class="meta-item">
+          <span class="label">GPA:</span>
+          <span class="value">{{ studentInfo.gpa }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enrolled Courses list -->
+  <div class="enrollment-section">
+    <h3>My Enrolled Courses</h3>
+
+    <div *ngIf="enrolledCourses.length > 0; else noEnrollments" class="enrolled-list">
+      <div *ngFor="let course of enrolledCourses" class="enrolled-item">
+        <div class="course-info">
+          <span class="course-code">{{ course.code }}</span>
+          <span class="course-name">{{ course.name }}</span>
+        </div>
+        <span class="course-credits">{{ course.credits | creditLabel }}</span>
+      </div>
+    </div>
+
+    <ng-template #noEnrollments>
+      <div class="no-enrollments-card">
+        <p>You have not enrolled in any courses yet.</p>
+        <p class="sub">Head over to the Courses catalog to get started!</p>
+      </div>
+    </ng-template>
+  </div>
+</div>

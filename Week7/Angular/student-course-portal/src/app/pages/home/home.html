@@ -1,0 +1,44 @@
+<div class="home-container">
+  <div class="hero-section">
+    <h1>Welcome to {{ portalName }}</h1>
+    <p class="description">
+      Your gateway to skill development and academic success. Browse top-rated courses, manage your enrollments, and track your progress in real-time.
+    </p>
+
+    <!-- Stats Section -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Courses Available</h3>
+        <p class="stat-value">{{ liveCoursesCount }}</p>
+      </div>
+      <div class="stat-card">
+        <h3>Enrolled Courses</h3>
+        <p class="stat-value">3</p>
+      </div>
+      <div class="stat-card">
+        <h3>GPA</h3>
+        <p class="stat-value">3.8</p>
+      </div>
+    </div>
+
+    <!-- Action Button -->
+    <div class="actions">
+      <button class="btn btn-primary" [disabled]="!isPortalActive" (click)="onEnrollClick()">
+        Enroll Now
+      </button>
+      <p *ngIf="message" class="enroll-message">{{ message }}</p>
+    </div>
+  </div>
+
+  <!-- Search Section -->
+  <div class="search-section">
+    <h2>Search Courses</h2>
+    <div class="search-box">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Type to search courses..." class="search-input" />
+    </div>
+    <p class="search-feedback" *ngIf="searchTerm">Searching for: <strong>{{ searchTerm }}</strong></p>
+  </div>
+
+  <!-- Course Summary Widget -->
+  <app-course-summary></app-course-summary>
+</div>

@@ -1,0 +1,39 @@
+<div
+  class="card"
+  [appHighlight]="'rgba(37, 99, 235, 0.05)'"
+  [ngClass]="cardClasses"
+  [ngStyle]="{'border-left': '6px solid ' + getBorderColor()}"
+>
+  <div class="card-header">
+    <span class="course-code">{{ course.code }}</span>
+    
+    <!-- Grade Status Badge using *ngSwitch -->
+    <div [ngSwitch]="course.gradeStatus">
+      <span *ngSwitchCase="'passed'" class="badge badge-passed">Passed</span>
+      <span *ngSwitchCase="'failed'" class="badge badge-failed">Failed</span>
+      <span *ngSwitchCase="'pending'" class="badge badge-pending">Pending</span>
+      <span *ngSwitchDefault class="badge badge-pending">Pending</span>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h3 class="course-name">{{ course.name }}</h3>
+    <!-- Custom Pipe formatting -->
+    <p class="course-credits">{{ course.credits | creditLabel }}</p>
+    
+    <div class="details-pane" *ngIf="isExpanded">
+      <p class="expanded-info">
+        This is an advanced track course. The student is expected to attend all online sessions, complete projects on time, and sit for examinations.
+      </p>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <button class="btn-secondary" (click)="toggleExpand($event)">
+      {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+    </button>
+    <button class="btn-enroll" (click)="onEnrollClick($event)">
+      {{ (enrolledIds$ | async)?.includes(course.id) ? 'Unenroll' : 'Enroll' }}
+    </button>
+  </div>
+</div>

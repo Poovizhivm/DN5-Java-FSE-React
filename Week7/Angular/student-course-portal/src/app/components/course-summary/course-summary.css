@@ -1,0 +1,38 @@
+.summary-widget {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.summary-widget h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.summary-widget p {
+  font-size: 0.85rem;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+.btn-mock {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-mock:hover {
+  background: #059669;
+}

@@ -1,0 +1,143 @@
+.card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Enrolled State Class */
+.card.card--enrolled {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+/* Full Credit Class */
+.card.card--full {
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.08);
+}
+
+/* Expanded Card State */
+.card.expanded {
+  min-height: 320px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.course-code {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+/* Badges CSS */
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.badge-passed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.badge-failed {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-pending {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.course-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.course-credits {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 550;
+  margin: 0;
+}
+
+/* Expanded Section */
+.details-pane {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #475569;
+  border: 1px dashed #e2e8f0;
+}
+
+.card-footer {
+  margin-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-enroll {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex: 1;
+}
+
+.btn-enroll:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: white;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.btn-secondary:hover {
+  background: #f8fafc;
+  color: #1f2937;
+}

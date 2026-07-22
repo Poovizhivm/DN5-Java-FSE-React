@@ -1,0 +1,163 @@
+.detail-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.back-link-row {
+  margin-bottom: 1.5rem;
+}
+
+.back-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #1d4ed8;
+}
+
+.detail-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  padding: 2.5rem;
+}
+
+.detail-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 1.5rem;
+}
+
+.detail-header .course-code {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.detail-header h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.detail-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-item .label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.info-item .value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.info-item .badge {
+  display: inline-block;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  align-self: flex-start;
+}
+
+.badge-passed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.badge-failed {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-pending {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.course-syllabus h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.course-syllabus p {
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Enrolled Students styles */
+.course-students h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.students-list {
+  list-style: none;
+  padding: 0;
+}
+
+.student-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.student-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.student-email {
+  color: #64748b;
+}
+
+.not-found-banner {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #fee2e2;
+  color: #b91c1c;
+}

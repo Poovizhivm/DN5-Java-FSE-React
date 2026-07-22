@@ -1,0 +1,53 @@
+<div class="courses-container">
+  <div class="list-header">
+    <h2>Available Courses</h2>
+    <p>Browse through the curriculum and enroll in your desired courses.</p>
+  </div>
+
+  <!-- Search input row -->
+  <div class="search-row">
+    <input
+      type="text"
+      [(ngModel)]="searchVal"
+      (ngModelChange)="onSearchChange()"
+      placeholder="Filter courses by name or code..."
+      class="search-input"
+    />
+  </div>
+
+  <!-- Error Banner -->
+  <div class="error-banner" *ngIf="error$ | async as errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Loading State Indicator -->
+  <div class="loading-state" *ngIf="loading$ | async">
+    <div class="spinner"></div>
+    <p>Loading courses...</p>
+  </div>
+
+  <!-- Courses Grid or Empty State -->
+  <ng-container *ngIf="!(loading$ | async) && !(error$ | async)">
+    <div *ngIf="(filteredCourses$ | async) && (filteredCourses$ | async)!.length > 0; else noCourses" class="courses-grid">
+      <app-course-card
+        *ngFor="let c of (filteredCourses$ | async); let i = index; trackBy: trackByCourseId"
+        [course]="c"
+        (enrollRequested)="onEnroll($event)"
+        (click)="onCardClick(c.id)"
+        class="clickable-card"
+      ></app-course-card>
+    </div>
+  </ng-container>
+
+  <!-- Empty State Template -->
+  <ng-template #noCourses>
+    <div class="empty-state">
+      <p>No courses available matching your criteria.</p>
+    </div>
+  </ng-template>
+
+  <!-- Selected Course Banner -->
+  <div class="selection-banner" *ngIf="selectedCourseId">
+    <p>Selected course ID: <strong>{{ selectedCourseId }}</strong></p>
+  </div>
+</div>

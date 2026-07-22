@@ -1,0 +1,48 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "name": "Data Structures & Algorithms",
+      "code": "CS101",
+      "credits": 4,
+      "gradeStatus": "passed"
+    },
+    {
+      "id": "2",
+      "name": "Web Development Basics",
+      "code": "CS102",
+      "credits": 3,
+      "gradeStatus": "passed"
+    },
+    {
+      "id": "3",
+      "name": "Database Management Systems",
+      "code": "CS201",
+      "credits": 4,
+      "gradeStatus": "pending"
+    },
+    {
+      "id": "4",
+      "name": "Software Engineering",
+      "code": "CS202",
+      "credits": 3,
+      "gradeStatus": "failed"
+    },
+    {
+      "id": "5",
+      "name": "Artificial Intelligence",
+      "code": "CS301",
+      "credits": 4,
+      "gradeStatus": "pending"
+    }
+  ],
+  "students": [
+    {
+      "id": "1",
+      "name": "Jane Doe",
+      "email": "jane.doe@university.edu",
+      "major": "Computer Science"
+    }
+  ],
+  "enrollments": []
+}
